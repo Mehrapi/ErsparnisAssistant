@@ -34,7 +34,7 @@ JTextField zinsenTextField = new JTextField();
      {
          
       // Erstellung des Frames 
-         setTitle("SparKonto");
+         setTitle("Ersparnis  Rechner");
          addWindowListener(new WindowAdapter()
          {
              public void windowClosing(WindowEvent e)
@@ -176,9 +176,7 @@ JTextField zinsenTextField = new JTextField();
              
          });
          
-         pack();
-         
-         
+         pack();         
      }
      private void berechnenButtonActionPerformed(ActionEvent e)
      {
@@ -188,24 +186,118 @@ JTextField zinsenTextField = new JTextField();
          double monate;
          double schlusssaldo;
          double monatlichenZinsen;
+         double finalCompute, intChange;
+         int intDirection;
          
-        
-         
-         // Eingabe Validierung
-         
-         if(!validateDecimalNumber(monateTextField) || 
-            !validateDecimalNumber(zinsenTextField) ||
-            !validateDecimalNumber(einzahlungTextField))
-         {
-             // Wenn ein oder mehr Felder nich valid Nummer hat, dann Method beenden
-             return;
-             
-         }
-         
+    //Eingabe validierung - suchen welcher Felder is leer - Berechnung des Werts des leer Felder.
+    
+    if (einzahlungTextField.getText().equals(""))
+            {
+                 // Eingabe Validierung
+                if (!validateDecimalNumber(monateTextField) ||
+                    !validateDecimalNumber(zinsenTextField) ||
+                    !validateDecimalNumber(schlussTextField))
+                
+                {
+                     // Wenn ein oder mehr Felder nich valid Nummer hat, dann Method beenden
+                    return;
+                }
+                
           /* Benutzung der Werte von TextFields. Diese Werte werden in
          Double umwandelen.
-         */
-         
+         */       
+        zinsen = Double.valueOf(zinsenTextField.getText()).doubleValue();
+        monatlichenZinsen = zinsen / 1200;
+        monate = Double.valueOf(monateTextField.getText()).doubleValue();
+        schlusssaldo = Double.valueOf(schlussTextField.getText()).doubleValue();
+        
+        if (zinsen == 0)
+        {
+            einzahlung = schlusssaldo / monate;
+                }
+        else
+        {
+            einzahlung = schlusssaldo / ((Math.pow((1 + monatlichenZinsen), monate)-1)/monatlichenZinsen);
+        }
+                     
+        einzahlungTextField.setText(new DecimalFormat("0.00").format(einzahlung));
+            }
+        else if (zinsenTextField.getText().trim().equals(""))
+    {
+        if (!validateDecimalNumber(monateTextField) || 
+            !validateDecimalNumber(einzahlungTextField) ||
+             !validateDecimalNumber(schlussTextField))
+        { 
+            return;
+        }
+        
+        einzahlung = Double.valueOf(einzahlungTextField.getText()).doubleValue();
+        monate = Double.valueOf(monateTextField.getText()).doubleValue();
+        schlusssaldo = Double.valueOf(schlussTextField.getText()).doubleValue();
+        
+        zinsen = 0;
+        intChange = 1;
+        intDirection = 1;
+        do
+        {
+            zinsen += intDirection*intChange;
+            monatlichenZinsen = zinsen / 1200;
+            finalCompute = einzahlung*(Math.pow((1 + monatlichenZinsen), monate)-1) / monatlichenZinsen;
+            if(intDirection == 1)
+            {           
+                if(finalCompute > schlusssaldo)
+                {
+                    intDirection = -1;
+                    intChange /= 10;
+                }
+            }
+                else 
+                {
+                        if(finalCompute < schlusssaldo)
+                            {
+                                intDirection = 1;
+                                intChange /= 10;
+                            }
+                        }
+                }
+        
+                while (Math.abs(finalCompute - schlusssaldo) >= 0.005);
+                zinsenTextField.setText(new DecimalFormat("0.00").format(zinsen));
+        }
+                 else if (monateTextField.getText().trim().equals(""))
+                 {
+                if (!validateDecimalNumber(einzahlungTextField) ||
+                    !validateDecimalNumber(zinsenTextField) ||
+                    !validateDecimalNumber(schlussTextField))
+                {
+                    return;
+                }
+            einzahlung = Double.valueOf(einzahlungTextField.getText()).doubleValue();
+            zinsen = Double.valueOf(zinsenTextField.getText()).doubleValue();
+            monatlichenZinsen = zinsen/1200;
+            schlusssaldo = Double.valueOf(schlussTextField.getText()).doubleValue();
+            if (zinsen == 0)
+            {
+                monate = schlusssaldo / einzahlung;
+            }
+            else
+            {
+                monate = Math.log(schlusssaldo* monatlichenZinsen / einzahlung +1) / Math.log(1 + monatlichenZinsen);
+            }
+            
+           monateTextField.setText(new DecimalFormat("0.00").format(monate));
+            }
+     else if (schlussTextField.getText().trim().equals(""))
+        {  
+            
+        if(!validateDecimalNumber(monateTextField) || 
+        !validateDecimalNumber(zinsenTextField) ||
+        !validateDecimalNumber(einzahlungTextField))
+         {
+            
+             return;
+             
+         }       
               einzahlung = Double.valueOf(einzahlungTextField.getText()).doubleValue();
               zinsen = Double.valueOf(zinsenTextField.getText()).doubleValue();
               monatlichenZinsen = zinsen/1200;
@@ -224,8 +316,7 @@ JTextField zinsenTextField = new JTextField();
               schlussTextField.setText(new DecimalFormat("0.00").format(schlusssaldo));
               
         }
-      
-    
+     }
     private void beendenButtonActionPerformed(ActionEvent e)
     {
     System.exit(0);
