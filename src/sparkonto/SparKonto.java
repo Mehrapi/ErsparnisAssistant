@@ -1,8 +1,6 @@
 /*
 SparKonto ist ein app, mit dem man seine Ersparnis berechnen kann.
- */
-/*
-Sparkonto berechnen den Schlusssaldo einer Einzahlung mit x Zinsen und x Monateeiner
+Es berechnet den Schlusssaldo oder die monatliche Einzahlung wenn die anderen Daten eingegeben ist
  */
 package sparkonto;
 import javax.swing.*;
@@ -189,7 +187,7 @@ JTextField zinsenTextField = new JTextField();
          double finalCompute, intChange;
          int intDirection;
          
-    //Eingabe validierung - suchen welcher Felder is leer - Berechnung des Werts des leer Felder.
+    //Eingabe validierung - welcher Felder is leer - Berechnung.
     
     if (einzahlungTextField.getText().equals(""))
             {
@@ -199,7 +197,7 @@ JTextField zinsenTextField = new JTextField();
                     !validateDecimalNumber(schlussTextField))
                 
                 {
-                     // Wenn ein oder mehr Felder nich valid Nummer hat, dann Method beenden
+                     // Wenn ein oder mehr Felder kein valid Nummer hat, dann das Program wird beendet
                     return;
                 }
                 
