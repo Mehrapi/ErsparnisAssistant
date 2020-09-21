@@ -174,8 +174,14 @@ JTextField zinsenTextField = new JTextField();
              
          });
          
-         pack();         
+         pack();   
+         
+         // Mit diesem QuelleText wird das Fenster in Bildschirmmitte erscheinen
+         Dimension bildschirmgröße = Toolkit.getDefaultToolkit().getScreenSize();
+        setBounds((int) (0.5*(bildschirmgröße.width - getWidth())), (int) (0.5*(bildschirmgröße.height - getHeight())), getWidth(), getHeight());
      }
+     
+     
      private void berechnenButtonActionPerformed(ActionEvent e)
      {
          // Initiation der Variable Einzahlung, Zinsen, Monate, Sclusssaldo, MonatlichenZinsen
