@@ -16,7 +16,7 @@ Die Bilder unten zeigen, wie die Applikation funktioniert.
 
 Nach dem berechnung der Schlusssaldo, die Analysis des Ergebnis ist auf dem Analysis'Texfeld gezeigt. Wenn man neu Berechnung auf den Schlussaldo machen will, das Reset Button benutzen und alle Felder werden gelöscht.
 
-![ErsparnisAssistant2](https://user-images.githubusercontent.com/71266593/94361624-ea9a6680-00b5-11eb-94bb-8930b8d1937b.png)
+![ErsparnisAssistant2](https://user-images.githubusercontent.com/71266593/94365222-4e7d5900-00cf-11eb-859c-9e77e28dd632.png)
 
 
 **2. Berechnung von der Anzahl der Monate**
@@ -29,5 +29,4 @@ Bereit für die berechnung der Anzahl der Monate
 Nach der Berechnung von der Anzahl der Monate die Analysis des Ergebnis ist auf dem Analysis' Textfeld gezeigt. Wenn man den Schlusssaldo berechnen möchte, cklick man auf den (S) Button und die Berechnung Option andert sich. 
 
 
-![ErsparnisAssistant3](https://user-images.githubusercontent.com/71266593/94361548-592af480-00b5-11eb-8fbc-c32db82daaff.PNG)
-
+![ErsparnisAssistant3](https://user-images.githubusercontent.com/71266593/94365240-63f28300-00cf-11eb-8f66-f663ed3c1ec2.PNG)
