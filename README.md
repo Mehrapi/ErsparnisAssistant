@@ -12,13 +12,15 @@ Eine Snapshot der fertigen App ist unten 👇 zu sehen.
 
 Bereit Schlusssaldo zu Berechnen, und die option fur die Berrechnung der Anzahl der Monate aktiviert
 
-![ErsparnisAssistant - Kopie](https://user-images.githubusercontent.com/71266593/94361054-e79d7700-00b1-11eb-94ad-0b5cff6788f7.png)
+![ErsparnisAssistant5](https://user-images.githubusercontent.com/71266593/94361676-71e7da00-00b6-11eb-824b-8b4902c401e3.PNG)
 
 
 Nach berechnung schlusssaldo
 
 
-![ErsparnisAssistant3](https://user-images.githubusercontent.com/71266593/94361520-1d902a80-00b5-11eb-83e1-874ed3dc2014.PNG)
+
+![ErsparnisAssistant2](https://user-images.githubusercontent.com/71266593/94361624-ea9a6680-00b5-11eb-94bb-8930b8d1937b.png)
+
 
 Bereit für die berechnung der Anzahl der Monate
 
