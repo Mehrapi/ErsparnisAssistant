@@ -35,7 +35,7 @@ Nach der Berechnung von der Anzahl der Monate die Analysis des Ergebnis ist auf 
 
 **3. Eingabe Validierung**
 
-Mit diese Applikation wenn mann unvalid Anzahl eingibt, zb. Anzahl mit zwei Kommas oder Buschtable, dieser wird automatish gelöscht, und man soll neue Anzahl eingeben.
-Außerdem wenn ein Felder ist leer, man bekommt kein Ergebnis, bis eine valide Anzahl an diesem Feld ist eingegeben. 
+Wenn man unvalid Anzahl eingibt, zb. Anzahl mit zwei Kommas oder Buschtable, dieser wird automatish gelöscht, und neue Anzahl soll eingegeben sein.
+Außerdem, wenn ein Felder leer ist, kein Ergebnis wird gezeigt, bis eine valide Anzahl an diesem Feld eingegeben ist. 
 
 
