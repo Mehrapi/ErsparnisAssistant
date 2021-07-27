@@ -1,5 +1,5 @@
-# 
-**Hallo und Wilkommen auf meinem  Ersparnis Assistant Repo!**
+# Hallo und Wilkommen
+** **
 
 Mit diesem Java Projekt habe ich eine Ersparnis Assistant Appikation gelernt. Sie hat Zwei Funktionen:
 - Berechnung von dem Schlussaldo. 
